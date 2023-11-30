@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Notas | UGB</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" type="image/png" href="EscudoUGBBlanco.jpg" />
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Notas | UGB</h1>
+        
+        <div id="computo1" class="computo-section show">
+            <h2>Computo 1</h2>
+            <label for="L1C1">Nota Lab 1:</label>
+            <input required type="number" id="L1C1" step="0.01">
+            <br>
+            <label for="L2C1">Nota Lab 2:</label>
+            <input required type="number" id="L2C1" step="0.01">
+            <br>
+            <label for="P1C1">Nota Parcial:</label>
+            <input required type="number" id="P1C1" step="0.01">
+            <br>
+            <button onclick="siguienteComputo()">Siguiente</button>
+        </div>
+
+        <div id="computo2" class="computo-section">
+            <h2>Computo 2</h2>
+            <label for="L1C2">Nota Lab 1:</label>
+            <input required type="number" id="L1C2" step="0.01">
+            <br>
+            <label for="L2C2">Nota Lab 2:</label>
+            <input required type="number" id="L2C2" step="0.01">
+            <br>
+            <label for="P1C2">Nota Parcial:</label>
+            <input required type="number" id="P1C2" step="0.01">
+            <br>
+            <button onclick="siguienteComputo()">Siguiente</button>
+        </div>
+
+        <div id="computo3" class="computo-section">
+            <h2>Computo 3</h2>
+            <label for="L1C3">Nota Lab 1:</label>
+            <input required type="number" id="L1C3" step="0.01">
+            <br>
+            <label for="L2C3">Nota Lab 2:</label>
+            <input required type="number" id="L2C3" step="0.01">
+            <br>
+            <label for="P1C3">Nota Parcial:</label>
+            <input required type="number" id="P1C3" step="0.01">
+            <br>
+            <button onclick="calcularNotas()">Calcular Notas</button>
+        </div>
+
+        <div id="resultadosFinales" class="resultados">
+            <!-- Resultados se mostrarán aquí -->
+        </div>
+    </div>
+
+    <script src="calcularNotas.js"></script>
+</body>
+</html>
