@@ -30,8 +30,9 @@ const resultadosFinales = document.createElement('div');
 resultadosFinales.id = 'resultadosFinales';
 resultadosFinales.classList.add('resultados');
 resultadosFinales.innerHTML = '<!-- Resultados se mostrarán aquí -->';
-
 container.appendChild(resultadosFinales);
+
+
 
 let pasoActual = 1;
 
@@ -46,6 +47,7 @@ function siguienteComputo() {
         calcularNotas();
     }
 }
+
 
 function validarCampos() {
     const inputs = document.querySelectorAll(`#computo${pasoActual} input[required]`);
@@ -91,8 +93,24 @@ function calcularNotas() {
     // Mostrar los resultados en la página web
     let resultadosFinales = document.getElementById("resultadosFinales");
     resultadosFinales.innerHTML = "<h2>Resultados</h2>";
-    resultadosFinales.innerHTML += "<p>Promedio Computo 1: " + promedio1.toFixed(2) + "</p>";
-    resultadosFinales.innerHTML += "<p>Promedio Computo 2: " + promedio2.toFixed(2) + "</p>";
-    resultadosFinales.innerHTML += "<p>Promedio Computo 3: " + promedio3.toFixed(2) + "</p>";
-    resultadosFinales.innerHTML += "<p>Nota Final: " + notaFinal.toFixed(2) + "</p>";
+    resultadosFinales.innerHTML += "<p>C1: " + promedio1.toFixed(2) + "</p>";
+    resultadosFinales.innerHTML += "<p>C2: " + promedio2.toFixed(2) + "</p>";
+    resultadosFinales.innerHTML += "<p>C3: " + promedio3.toFixed(2) + "</p>";
+   // Color según la nota final
+   let notaFinalText = "NF: " + notaFinal.toFixed(2);
+   let colorNotaFinal = '';
+   if (notaFinal >= 6) {
+       colorNotaFinal = '#04B404'; // Aprobado (color verde)
+   } else if (notaFinal >= 5.6 && notaFinal < 6) {
+       colorNotaFinal = '#FF8000'; // Toca repo (color naranja)
+   } else {
+       colorNotaFinal = '#B40404'; // Reprobado (color rojo)
+   }
+
+   // Crear un elemento para mostrar la nota final con el color correspondiente
+   let notaFinalElement = document.createElement('p');
+   notaFinalElement.style.color = colorNotaFinal;
+   notaFinalElement.style.fontWeight = 'bold';
+   notaFinalElement.textContent = notaFinalText;
+   resultadosFinales.appendChild(notaFinalElement);
 }
