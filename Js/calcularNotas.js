@@ -10,17 +10,20 @@ for (let i = 1; i <= 3; i++) {
     }
 
     div.innerHTML = `
-        <h2>Computo ${i}</h2>
-        <label for="L1C${i}">Nota Lab 1:</label>
-        <input required type="number" id="L1C${i}" step="0.01">
+        <img src="../img/EscudoUGBBlanco.jpg" alt="Imagen" class="img">
         <br>
-        <label for="L2C${i}">Nota Lab 2:</label>
-        <input required type="number" id="L2C${i}" step="0.01">
+        <h2>Computo ${i}</h2>
+        <label for="L1C${i}">Nota 1:</label>
+        <input required type="number" id="L1C${i}">
+        <br>
+        <label for="L2C${i}">Nota 2:</label>
+        <input required type="number" id="L2C${i}">
         <br>
         <label for="P1C${i}">Nota Parcial:</label>
-        <input required type="number" id="P1C${i}" step="0.01">
+        <input required type="number" id="P1C${i}">
         <br>
         <button onclick="siguienteComputo()">Siguiente</button>
+        
     `;
 
     container.appendChild(div);

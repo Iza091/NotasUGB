@@ -1,8 +1,9 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #fff8f8;
+
 }
 
 .container {
@@ -14,9 +15,18 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+.img{
+    width: 10rem auto;
+    height: 9rem;
+    margin-top: 10px; 
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+    padding: 5px;
+}
 
 h1, h2 {
-    color: #007bff;
+    color:  #011B40;
     text-align: center;
 }
 
@@ -34,14 +44,14 @@ input[type="number"], button {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #011B40;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3137eb;
 }
 
 .resultados {
@@ -60,3 +70,20 @@ button:hover {
 .computo-section.show {
     display: block;
 }
+
+/* Estilos para las barras de desplazamiento en navegadores WebKit */
+/* Anchura de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Estilo de la pista (track) de la barra de desplazamiento */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color de fondo de la pista */
+  }
+  
+  /* Estilo del pulgar (thumb) de la barra de desplazamiento */
+  ::-webkit-scrollbar-thumb {
+    background-color: #011B40; /* Color del pulgar */
+    border-radius: 5px; /* Borde redonde*/
+  }
