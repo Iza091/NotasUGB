@@ -10,7 +10,7 @@ for (let i = 1; i <= 3; i++) {
     }
 
     div.innerHTML = `
-        <img src="../img/EscudoUGBBlanco.jpg" alt="Imagen" class="img">
+        <img src="./img/EscudoUGBBlanco.jpg" alt="Imagen" class="img">
         <br>
         <h2>Computo ${i}</h2>
         <label for="L1C${i}">Nota 1:</label>
