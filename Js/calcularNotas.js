@@ -8,9 +8,10 @@ for (let i = 1; i <= 3; i++) {
     if (i === 1) {
         div.classList.add('show');
     }
-
+    
+//Acá es donde html toma control y por ende solo un punto
     div.innerHTML = `
-        <img src="../img/EscudoUGBBlanco.jpg" alt="Imagen" class="img">
+        <img src="./img/EscudoUGBBlanco.jpg" alt="Imagen" class="img">  
         <br>
         <h2>Computo ${i}</h2>
         <label for="L1C${i}">Nota 1:</label>
