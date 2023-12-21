@@ -92,7 +92,7 @@ function calcularNotas() {
     let promedio3 = (L1C3 * 0.3) + (L2C3 * 0.3) + (P1C3 * 0.4);
 
     // Calcular la nota final ponderada
-    let notaFinal = (promedio1 * 0.35) + (promedio2 * 0.35) + (promedio3 * 0.30);
+    let notaFinal = (promedio1 * 0.33) + (promedio2 * 0.33) + (promedio3 * 0.35);
 
     // Mostrar los resultados en la página web
     let resultadosFinales = document.getElementById("resultadosFinales");
@@ -101,7 +101,7 @@ function calcularNotas() {
     resultadosFinales.innerHTML += "<p>C2: " + promedio2.toFixed(2) + "</p>";
     resultadosFinales.innerHTML += "<p>C3: " + promedio3.toFixed(2) + "</p>";
    // Color según la nota final
-   let notaFinalText = "NF: " + notaFinal.toFixed(2);
+   let notaFinalText = "NF: " + notaFinal.toFixed(1);
    let colorNotaFinal = '';
    if (notaFinal >= 6) {
        colorNotaFinal = '#04B404'; // Aprobado (color verde)
