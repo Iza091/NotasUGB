@@ -5,7 +5,7 @@ self.addEventListener('install', event => {
                 './',
                 './index.html',
                 './css/estilos.css',
-                './js/calcularNotas.js',
+                './Js/calcularNotas.js',
                 './img/EscudoUGBBlanco.jpg',
                 './img/EscudoUGBBlanco_192px.png',
                 './img/EscudoUGBBlanco_512px.png'
