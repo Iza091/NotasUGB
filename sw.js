@@ -2,13 +2,13 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open('calculadora-notas-v1').then(cache => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/css/estilos.css',
-                '/js/calcularNotas.js',
-                '/img/EscudoUGBBlanco.jpg',
-                '/img/icon-192.png',
-                '/img/icon-512.png'
+                './',
+                './index.html',
+                './css/estilos.css',
+                './js/calcularNotas.js',
+                './img/EscudoUGBBlanco.jpg',
+                './img/EscudoUGBBlanco_192px.png',
+                './img/EscudoUGBBlanco_512px.png'
             ]);
         })
     );
