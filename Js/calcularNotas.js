@@ -1,28 +1,33 @@
+// calcularNotas.js
 const container = document.querySelector('.container');
 
 for (let i = 1; i <= 3; i++) {
     const div = document.createElement('div');
     div.id = `computo${i}`;
-    div.classList.add('computo-section');
+    div.classList.add('computo-section', 'card', 'mb-3', 'p-3');
 
     if (i === 1) {
         div.classList.add('show');
     }
     
     div.innerHTML = `
-        <img src="./img/EscudoUGBBlanco.jpg" alt="Imagen" class="img">
-        <br>
-        <h2>Computo ${i}</h2>
-        <label for="L1C${i}">Nota 1:</label>
-        <input required type="number" id="L1C${i}">
-        <br>
-        <label for="L2C${i}">Nota 2:</label>
-        <input required type="number" id="L2C${i}">
-        <br>
-        <label for="P1C${i}">Nota Parcial:</label>
-        <input required type="number" id="P1C${i}">
-        <br>
-        <button onclick="siguienteComputo()">Siguiente</button>
+        <div class="text-center">
+            <img src="./img/EscudoUGBBlanco.jpg" alt="Imagen" class="img-fluid mb-3" style="max-width: 150px;">
+        </div>
+        <h2 class="text-center">Cómputo ${i}</h2>
+        <div class="mb-3">
+            <label for="L1C${i}" class="form-label">Nota 1:</label>
+            <input required type="number" id="L1C${i}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="L2C${i}" class="form-label">Nota 2:</label>
+            <input required type="number" id="L2C${i}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="P1C${i}" class="form-label">Nota Parcial:</label>
+            <input required type="number" id="P1C${i}" class="form-control">
+        </div>
+        <button onclick="siguienteComputo()" class="btn btn-primary w-100">Siguiente</button>
     `;
 
     container.appendChild(div);
@@ -30,7 +35,7 @@ for (let i = 1; i <= 3; i++) {
 
 const resultadosFinales = document.createElement('div');
 resultadosFinales.id = 'resultadosFinales';
-resultadosFinales.classList.add('resultados');
+resultadosFinales.classList.add('resultados', 'card', 'p-3', 'mt-4');
 resultadosFinales.innerHTML = '<!-- Resultados se mostrarán aquí -->';
 container.appendChild(resultadosFinales);
 

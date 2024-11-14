@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 90%; /* Ancho inicial para móviles */
     margin: 10px auto;
     background-color: #ffffff;
     padding: 15px;
@@ -30,7 +30,7 @@ h1, h2 {
 }
 
 input[type="number"], button {
-    width: 100%;
+    width: 100%; /* Ancho completo para móviles */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -66,12 +66,12 @@ button:hover {
     display: block;
 }
 
-/* Media Queries for larger screens */
-@media (min-width: 768px) {
+/* Estilos para tablets (pantallas medianas) */
+@media (min-width: 480px) {
     .container {
-        width: 80%;
-        max-width: 800px;
-        padding: 20px;
+        width: 95%; /* Ajuste de ancho para tablets */
+        max-width: 600px;
+        padding: 16px;
     }
 
     .img {
@@ -79,8 +79,26 @@ button:hover {
     }
 
     input[type="number"], button {
-        width: calc(100% - 26px);
+        width: calc(100% - 20px); /* Reducción de ancho */
         padding: 12px;
+    }
+}
+
+/* Estilos para pantallas grandes (PCs) */
+@media (min-width: 768px) {
+    .container {
+        width: 80%; /* Ancho para pantallas grandes */
+        max-width: 800px;
+        padding: 20px;
+    }
+
+    .img {
+        max-width: 250px;
+    }
+
+    input[type="number"], button {
+        width: calc(100% - 26px);
+        padding: 14px;
     }
 }
 
@@ -96,4 +114,34 @@ button:hover {
 ::-webkit-scrollbar-thumb {
     background-color: #011B40;
     border-radius: 5px;
+}
+
+
+/* Estilos específicos para personalizar elementos */
+body {
+    background-color: #fff8f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resultados h2 {
+    color: #011B40;
+    text-align: center;
+}
+
+.resultados p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+/* Ajustes para el contenedor de las imágenes */
+.img-fluid {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Quitar flechas de inputs numéricos en navegadores WebKit */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
