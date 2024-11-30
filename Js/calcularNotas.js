@@ -18,14 +18,17 @@ for (let i = 1; i <= 3; i++) {
         <div class="mb-3">
             <label for="L1C${i}" class="form-label">Nota 1:</label>
             <input required type="number" id="L1C${i}" class="form-control">
+            <small class="text-danger error-message"></small>
         </div>
         <div class="mb-3">
             <label for="L2C${i}" class="form-label">Nota 2:</label>
             <input required type="number" id="L2C${i}" class="form-control">
+            <small class="text-danger error-message"></small>
         </div>
         <div class="mb-3">
             <label for="P1C${i}" class="form-label">Nota Parcial:</label>
             <input required type="number" id="P1C${i}" class="form-control">
+            <small class="text-danger error-message"></small>
         </div>
         <button onclick="siguienteComputo()" class="btn btn-primary w-100">Siguiente</button>
     `;
@@ -55,13 +58,19 @@ function siguienteComputo() {
 
 function validarCampos() {
     const inputs = document.querySelectorAll(`#computo${pasoActual} input[required]`);
-    for (let i = 0; i < inputs.length; i++) {
-        if (!inputs[i].value) {
-            alert('Por favor, complete todos los campos.');
-            return false;
+    let todosValidos = true;
+
+    inputs.forEach(input => {
+        const errorMessage = input.nextElementSibling; // El <small> asociado
+        if (!input.value) {
+            errorMessage.textContent = '* Este campo es obligatorio.';
+            todosValidos = false;
+        } else {
+            errorMessage.textContent = ''; // Limpiar el mensaje si el campo es válido
         }
-    }
-    return true;
+    });
+
+    return todosValidos;
 }
 
 function calcularNotas() {

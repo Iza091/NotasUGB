@@ -6,6 +6,12 @@ body {
     background-color: #fff8f8;
 }
 
+.text-danger {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
 .container {
     width: 90%; /* Ancho inicial para móviles */
     margin: 10px auto;
