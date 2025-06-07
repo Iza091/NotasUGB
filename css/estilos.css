@@ -1,153 +1,241 @@
-/* Estilos Mobile First */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* RESET BÁSICO */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fff8f8;
-}
-
-.text-danger {
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
-    display: block;
-}
-
-.container {
-    width: 90%; /* Ancho inicial para móviles */
-    margin: 10px auto;
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    margin: 10px auto;
-    display: block;
-    padding: 5px;
-}
-
-h1, h2 {
-    color: #011B40;
-    text-align: center;
-}
-
-input[type="number"], button {
-    width: 100%; /* Ancho completo para móviles */
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
     box-sizing: border-box;
 }
 
-button {
+/* GENERAL */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.main-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* ENCABEZADO */
+.header {
     background-color: #011B40;
     color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3137eb;
-}
-
-.resultados {
     text-align: center;
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
 }
 
-.computo-section {
+.header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* MODO SELECCIÓN */
+.mode-selector {
+    padding: 20px 0;
+}
+
+.mode-card {
+    border: 1px solid #dbe2ef;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.mode-card:hover{
+  background: #011B40;
+    color: #fff;
+}
+
+.mode-card.active {
+    background-color: #011B40;
+    color: #fff;
+    border-color: #011B40;
+}
+
+.mode-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* CALCULADORAS */
+.calculator-section {
     display: none;
 }
 
-.computo-section.show {
+.calculator-section.active {
     display: block;
 }
 
-/* Estilos para tablets (pantallas medianas) */
-@media (min-width: 480px) {
-    .container {
-        width: 95%; /* Ajuste de ancho para tablets */
-        max-width: 600px;
-        padding: 16px;
-    }
-
-    .img {
-        max-width: 200px;
-    }
-
-    input[type="number"], button {
-        width: calc(100% - 20px); /* Reducción de ancho */
-        padding: 12px;
-    }
+/* BOTONES */
+.computo-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-/* Estilos para pantallas grandes (PCs) */
-@media (min-width: 768px) {
-    .container {
-        width: 80%; /* Ancho para pantallas grandes */
-        max-width: 800px;
-        padding: 20px;
-    }
-
-    .img {
-        max-width: 250px;
-    }
-
-    input[type="number"], button {
-        width: calc(100% - 26px);
-        padding: 14px;
-    }
-}
-
-/* Estilos para las barras de desplazamiento en navegadores WebKit */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #011B40;
-    border-radius: 5px;
-}
-
-
-/* Estilos específicos para personalizar elementos */
-body {
-    background-color: #fff8f8;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.resultados h2 {
+.computo-btn {
+    padding: 10px 20px;
+    border: 1px solid #011B40;
+    background: #fff;
     color: #011B40;
-    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-.resultados p {
-    margin: 8px 0;
-    font-size: 15px;
+.computo-btn:hover,
+.computo-btn.active {
+    background: #011B40;
+    color: #fff;
 }
 
-/* Ajustes para el contenedor de las imágenes */
-.img-fluid {
-    margin: 0 auto;
+.btn-primary, .btn-secondary {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #011B40;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* FORMULARIOS */
+.form-card {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* RESULTADOS */
+.results-card {
+    background: #f1f3f5;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.results-card.show {
     display: block;
 }
 
-/* Quitar flechas de inputs numéricos en navegadores WebKit */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.result-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-label {
+    font-weight: 600;
+}
+
+.result-value {
+    font-weight: 700;
+}
+
+.result-value.passed {
+    color: #28a745;
+}
+
+.result-value.warning {
+    color: #ffc107;
+}
+
+.result-value.failed {
+    color: #dc3545;
+}
+
+/* LOGO */
+.logo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #011B40;
+    transition: width 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .computo-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
