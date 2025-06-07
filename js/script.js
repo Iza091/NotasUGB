@@ -7,51 +7,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeModeSelector();
             generateGlobalSteps();
-
-            // Generar botones de cómputo específico
-            const selector = document.querySelector('.computo-selector');
-            selector.innerHTML = '';
-            for (let i = 1; i <= 3; i++) {
-                const btn = document.createElement('button');
-                btn.className = 'computo-btn';
-                btn.type = 'button';
-                btn.setAttribute('data-computo', i);
-                btn.innerHTML = `<i class="fas fa-bookmark me-2"></i>Cómputo ${i}`;
-                btn.onclick = function() { selectComputo(i); };
-                selector.appendChild(btn);
-            }
-
-            // Generar formulario específico vacío
-            document.getElementById('specificForm').innerHTML = `
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="form-label" for="specificL1">Laboratorio 1 (30%)</label>
-                            <input type="number" class="form-control" id="specificL1" step="0.1" min="0" max="10">
-                            <div class="error-message" id="specificL1Error"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="form-label" for="specificL2">Laboratorio 2 (30%)</label>
-                            <input type="number" class="form-control" id="specificL2" step="0.1" min="0" max="10">
-                            <div class="error-message" id="specificL2Error"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="form-label" for="specificP1">Parcial (40%)</label>
-                            <input type="number" class="form-control" id="specificP1" step="0.1" min="0" max="10">
-                            <div class="error-message" id="specificP1Error"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <button class="btn btn-primary" onclick="calculateSpecific()">
-                        <i class="fas fa-calculator me-2"></i>Calcular
-                    </button>
-                </div>
-            `;
+            generateSpecificSection();
         });
 
         // Selector de modo
@@ -246,6 +202,58 @@
         }
 
         // Calculadora Específica
+        function generateSpecificSection() {
+            const container = document.getElementById('specificSteps');
+            container.innerHTML = `
+                <div class="text-center mb-4">
+                    <h2><i class="fas fa-bullseye me-2"></i>Cómputo Específico</h2>
+                    <p class="text-muted">Selecciona el cómputo que deseas calcular</p>
+                </div>
+                <div class="computo-selector"></div>
+                <div class="form-card" id="specificForm" style="display:none;">
+                    <h3 class="mb-4" id="specificTitle"></h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="form-label" for="specificL1">Laboratorio 1 (30%)</label>
+                                <input type="number" class="form-control" id="specificL1" step="0.1" min="0" max="10">
+                                <div class="error-message" id="specificL1Error"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="form-label" for="specificL2">Laboratorio 2 (30%)</label>
+                                <input type="number" class="form-control" id="specificL2" step="0.1" min="0" max="10">
+                                <div class="error-message" id="specificL2Error"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="form-label" for="specificP1">Parcial (40%)</label>
+                                <input type="number" class="form-control" id="specificP1" step="0.1" min="0" max="10">
+                                <div class="error-message" id="specificP1Error"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4" onclick="calculateSpecific()">
+                        <i class="fas fa-calculator me-2"></i>Calcular Cómputo
+                    </button>
+                </div>
+            `;
+
+            // Generar botones de cómputo específico
+            const selector = container.querySelector('.computo-selector');
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'computo-btn';
+                btn.type = 'button';
+                btn.setAttribute('data-computo', i);
+                btn.innerHTML = `<i class="fas fa-bookmark me-2"></i>Cómputo ${i}`;
+                btn.onclick = function() { selectComputo(i); };
+                selector.appendChild(btn);
+            }
+        }
+
         function selectComputo(computo) {
             selectedComputo = computo;
             
